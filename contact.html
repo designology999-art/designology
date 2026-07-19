@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | Designology</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="container">
+        <a class="brand" href="index.html">DESIGN<span>OLOGY</span></a>
+        <button class="menu-toggle" aria-label="Open menu">☰</button>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="projects.html">Projects</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="contact.html" class="active">Contact</a>
+          <a href="quote.html" class="btn btn-primary">Get Quote</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="container reveal">
+          <p class="badge">Contact</p>
+          <h1>Let’s discuss your next project.</h1>
+          <p>We are based in Lucknow and welcome inquiries for residences, offices and bespoke interiors.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container contact-card">
+          <div class="card reveal">
+            <h3>Get in Touch</h3>
+            <ul class="info-list">
+              <li><strong>Address:</strong> Murli Bhawan Compound, Hazratganj, Lucknow, Uttar Pradesh, India</li>
+              <li><strong>Email:</strong> archidesignology@gmail.com</li>
+              <li><strong>Projects:</strong> 100+ completed</li>
+            </ul>
+          </div>
+          <div class="card reveal">
+            <form>
+              <div class="form-grid">
+                <div>
+                  <label for="name">Name</label>
+                  <input id="name" name="name" type="text" placeholder="Your name" required />
+                </div>
+                <div>
+                  <label for="email">Email</label>
+                  <input id="email" name="email" type="email" placeholder="Your email" required />
+                </div>
+                <div>
+                  <label for="phone">Phone</label>
+                  <input id="phone" name="phone" type="tel" placeholder="Your phone" required />
+                </div>
+                <div>
+                  <label for="message">Message</label>
+                  <textarea id="message" name="message" placeholder="Tell us about your project"></textarea>
+                </div>
+              </div>
+              <button class="btn btn-primary" type="submit">Send Inquiry</button>
+              <p class="success"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div>
+          <strong>DESIGNOLOGY</strong>
+          <p>Murli Bhawan Compound, Hazratganj, Lucknow, Uttar Pradesh, India</p>
+        </div>
+        <div>
+          <p>Email: archidesignology@gmail.com</p>
+          <p>© <span id="year"></span> Designology. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+      <a class="floating-email" href="mailto:archidesignology@gmail.com" aria-label="Email Designology">✉ Email</a>
+  </body>
+</html>

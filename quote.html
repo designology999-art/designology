@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quote Request | Designology</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="container">
+        <a class="brand" href="index.html">DESIGN<span>OLOGY</span></a>
+        <button class="menu-toggle" aria-label="Open menu">☰</button>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="projects.html">Projects</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="contact.html">Contact</a>
+          <a href="quote.html" class="btn btn-primary">Get Quote</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="container reveal">
+          <p class="badge">Quote Request</p>
+          <h1>Tell us about your project and we’ll begin the conversation.</h1>
+          <p>Share your requirements and we’ll respond with guidance, scope and next steps.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="card reveal">
+            <form>
+              <div class="form-grid">
+                <div>
+                  <label for="name">Name</label>
+                  <input id="name" name="name" type="text" placeholder="Your name" required />
+                </div>
+                <div>
+                  <label for="phone">Phone</label>
+                  <input id="phone" name="phone" type="tel" placeholder="Your phone" required />
+                </div>
+                <div>
+                  <label for="email">Email</label>
+                  <input id="email" name="email" type="email" placeholder="Your email" required />
+                </div>
+                <div>
+                  <label for="location">Location</label>
+                  <input id="location" name="location" type="text" placeholder="Project location" required />
+                </div>
+                <div>
+                  <label for="projectType">Project Type</label>
+                  <select id="projectType" name="projectType" required>
+                    <option value="">Select type</option>
+                    <option>Luxury House Construction</option>
+                    <option>Villa Construction</option>
+                    <option>Bungalow Construction</option>
+                    <option>Commercial Building</option>
+                    <option>Interior Designing</option>
+                    <option>Office Interiors</option>
+                    <option>Modular Kitchen</option>
+                    <option>Bedroom Design</option>
+                    <option>Bathroom Design</option>
+                    <option>Turnkey Project</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="sqft">Square Feet</label>
+                  <input id="sqft" name="sqft" type="text" placeholder="e.g. 2500 sq ft" required />
+                </div>
+                <div>
+                  <label for="budget">Budget</label>
+                  <input id="budget" name="budget" type="text" placeholder="Estimated budget" required />
+                </div>
+                <div>
+                  <label for="description">Description</label>
+                  <textarea id="description" name="description" placeholder="Share the details of your project"></textarea>
+                </div>
+              </div>
+              <button class="btn btn-primary" type="submit">Submit Request</button>
+              <p class="success"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div>
+          <strong>DESIGNOLOGY</strong>
+          <p>Murli Bhawan Compound, Hazratganj, Lucknow, Uttar Pradesh, India</p>
+        </div>
+        <div>
+          <p>Email: archidesignology@gmail.com</p>
+          <p>© <span id="year"></span> Designology. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+      <a class="floating-email" href="mailto:archidesignology@gmail.com" aria-label="Email Designology">✉ Email</a>
+  </body>
+</html>
