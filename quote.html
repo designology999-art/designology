@@ -38,7 +38,7 @@
       <section class="section">
         <div class="container">
           <div class="card reveal">
-            <form>
+            <form id="quote-form">
               <div class="form-grid">
                 <div>
                   <label for="name">Name</label>
@@ -58,7 +58,7 @@
                 </div>
                 <div>
                   <label for="projectType">Project Type</label>
-                  <select id="projectType" name="projectType" required>
+                  <select id="projectType" name="project_type" required>
                     <option value="">Select type</option>
                     <option>Luxury House Construction</option>
                     <option>Villa Construction</option>
@@ -74,7 +74,7 @@
                 </div>
                 <div>
                   <label for="sqft">Square Feet</label>
-                  <input id="sqft" name="sqft" type="text" placeholder="e.g. 2500 sq ft" required />
+                  <input id="sqft" name="square_feet" type="text" placeholder="e.g. 2500 sq ft" required />
                 </div>
                 <div>
                   <label for="budget">Budget</label>
@@ -82,7 +82,7 @@
                 </div>
                 <div>
                   <label for="description">Description</label>
-                  <textarea id="description" name="description" placeholder="Share the details of your project"></textarea>
+                  <textarea id="description" name="message" placeholder="Share the details of your project"></textarea>
                 </div>
               </div>
               <button class="btn btn-primary" type="submit">Submit Request</button>
@@ -106,6 +106,7 @@
       </div>
     </footer>
 
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script src="script.js"></script>
       <a class="floating-email" href="mailto:archidesignology@gmail.com" aria-label="Email Designology">✉ Email</a>
   </body>

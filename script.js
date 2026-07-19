@@ -56,15 +56,66 @@ document.querySelectorAll('.stat strong').forEach((counter) => counterObserver.o
 
 document.getElementById('year').textContent = new Date().getFullYear();
 
+const emailJsConfig = {
+  serviceId: 'service_oyauo2m',
+  templateId: 'template_3ir547f',
+  publicKey: '3Z0guuz7lUSzYPBLU',
+};
+
+if (window.emailjs) {
+  emailjs.init(emailJsConfig.publicKey);
+}
+
+const normalizeFieldName = (fieldName) => {
+  if (fieldName === 'projectType') return 'project_type';
+  if (fieldName === 'sqft') return 'square_feet';
+  if (fieldName === 'description') return 'message';
+  return fieldName;
+};
+
 const forms = document.querySelectorAll('form');
 forms.forEach((form) => {
-  form.addEventListener('submit', (event) => {
+  form.addEventListener('submit', async (event) => {
     event.preventDefault();
     const note = form.querySelector('.success');
-    if (note) {
-      note.style.display = 'block';
-      note.textContent = 'Thank you! We will connect with you shortly.';
+    if (!note) return;
+
+    note.style.display = 'block';
+    note.classList.remove('error');
+    note.textContent = 'Sending your inquiry…';
+
+    const formData = new FormData(form);
+    const templateParams = {
+      name: '',
+      phone: '',
+      email: '',
+      location: '',
+      project_type: '',
+      square_feet: '',
+      budget: '',
+      message: '',
+    };
+
+    formData.forEach((value, key) => {
+      const normalizedKey = normalizeFieldName(key);
+      if (Object.prototype.hasOwnProperty.call(templateParams, normalizedKey)) {
+        templateParams[normalizedKey] = value;
+      }
+    });
+
+    try {
+      if (!window.emailjs || !emailjs.send) {
+        throw new Error('EmailJS is not available.');
+      }
+
+      await emailjs.send(emailJsConfig.serviceId, emailJsConfig.templateId, templateParams);
+      note.classList.remove('error');
+      note.textContent = 'Thank you! Your inquiry has been sent successfully.';
+      form.reset();
+    } catch (error) {
+      note.classList.add('error');
+      note.textContent = 'Something went wrong while sending your inquiry. Please try again later.';
+      console.error('EmailJS send failed:', error);
     }
-    form.reset();
   });
 });
