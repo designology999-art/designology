@@ -62,8 +62,8 @@ const emailJsConfig = {
   publicKey: '3Z0guuz7lUSzYPBLU',
 };
 
-if (window.emailjs) {
-  emailjs.init(emailJsConfig.publicKey);
+if (typeof emailjs !== 'undefined' && emailjs.init) {
+  emailjs.init({ publicKey: emailJsConfig.publicKey });
 }
 
 const normalizeFieldName = (fieldName) => {
